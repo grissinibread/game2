@@ -1,5 +1,5 @@
 import * as readline from "node:readline";
-import {Game} from "./Game";
+import {Game} from "./Game.js";
 
 const rl = readline.createInterface({ input : process.stdin,
     output : process.stdout });

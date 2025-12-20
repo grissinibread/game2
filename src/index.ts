@@ -1,5 +1,5 @@
-import {Player} from "./Player";
-import {Game} from "./Game";
+import {Player} from "./Player.js";
+import {Game} from "./Game.js";
 
 let game: Game = new Game();
 
