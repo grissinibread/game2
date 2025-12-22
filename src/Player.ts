@@ -1,22 +1,11 @@
-import * as readline from "node:readline";
-import {Game} from "./Game.js";
-
-const rl = readline.createInterface({ input : process.stdin,
-    output : process.stdout });
-
 export class Player {
-    index: number = 0;
+    private words: string[] = [];
 
-    public applesauce() {
-        if (this.index >= Game.getBumOfWords()) {
-            rl.close();
-            return;
-        }
+    addWord(word: string): void {
+        this.words.push(word);
+    }
 
-        rl.question(`Word ${this.index + 1}: `, (userInput: string): void => {
-            Game.putSomethingIntoThisArray(userInput);
-            this.index++;
-            this.applesauce(); // ask next word
-        });
+    getWords(): string[] {
+        return this.words;
     }
 }
