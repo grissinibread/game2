@@ -71,23 +71,42 @@ function appleSauce(player) {
 }
 function main() {
     return __awaiter(this, void 0, void 0, function () {
-        var playerOne, playerTwo;
+        var bread, playerOne, playerTwo;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
+                    console.log("Select difficulty: ");
+                    console.log("Easy: 1");
+                    console.log("Normal: 2");
+                    console.log("Hard: 3");
+                    return [4 /*yield*/, ask("")];
+                case 1:
+                    bread = _a.sent();
+                    if (bread === "1") {
+                        Game_js_1.Game.setNumOfWords(3);
+                    }
+                    else if (bread === "2") {
+                        Game_js_1.Game.setNumOfWords(5);
+                    }
+                    else if (bread === "3") {
+                        Game_js_1.Game.setNumOfWords(7);
+                    }
+                    else {
+                        throw new Error("Didn't select an optional difficult!");
+                    }
                     console.log("--Player One--");
                     playerOne = new Player_js_1.Player();
                     return [4 /*yield*/, appleSauce(playerOne)];
-                case 1:
+                case 2:
                     _a.sent();
                     console.log("--Player Two--");
                     playerTwo = new Player_js_1.Player();
                     return [4 /*yield*/, appleSauce(playerTwo)];
-                case 2:
+                case 3:
                     _a.sent();
                     rl.close();
-                    console.log("Player One Words: " + playerOne.getWords());
-                    console.log("Player Two Words: " + playerTwo.getWords());
+                    console.log(playerOne.getWords());
+                    console.log(playerTwo.getWords());
                     return [2 /*return*/];
             }
         });

@@ -7,8 +7,8 @@ var Game = /** @class */ (function () {
     Game.getNumOfWords = function () {
         return this.numOfWords;
     };
-    Game.setNumOfWords = function (bumOfWords) {
-        this.numOfWords = bumOfWords;
+    Game.setNumOfWords = function (numOfWords) {
+        this.numOfWords = numOfWords;
     };
     Game.numOfWords = 3;
     return Game;

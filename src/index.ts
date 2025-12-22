@@ -19,6 +19,22 @@ async function appleSauce(player: Player) {
 }
 
 async function main() {
+    console.log("Select difficulty: ")
+    console.log("Easy: 1")
+    console.log("Normal: 2")
+    console.log("Hard: 3")
+
+    let bread = await ask("");
+    if(bread === "1") {
+        Game.setNumOfWords(3);
+    } else if(bread === "2") {
+        Game.setNumOfWords(5)
+    } else if(bread === "3") {
+        Game.setNumOfWords(7)
+    } else {
+        throw new Error("Didn't select an optional difficult!");
+    }
+
     console.log("--Player One--");
     let playerOne: Player = new Player();
     await appleSauce(playerOne);
@@ -28,6 +44,9 @@ async function main() {
     await appleSauce(playerTwo);
 
     rl.close();
+
+    console.log(playerOne.getWords())
+    console.log(playerTwo.getWords())
 }
 
 main();

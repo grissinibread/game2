@@ -5,7 +5,7 @@ export class Game {
         return this.numOfWords;
     }
 
-    static setNumOfWords(bumOfWords: number ): void {
-        this.numOfWords = bumOfWords;
+    static setNumOfWords(numOfWords: number ): void {
+        this.numOfWords = numOfWords;
     }
 }
